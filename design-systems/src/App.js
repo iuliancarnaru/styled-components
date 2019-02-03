@@ -8,29 +8,43 @@ const Heading = styled.h1`
   color: greenyellow;
 `;
 
+const color = "white";
+
 const Button = styled.button`
-  background-color: ${({type}) => (type === "cancel" ? 'tomato' : 'green')};
-  padding: 5px 10px;
+  background-color: green;
+  padding: 5px 20px;
   border-radius: 5px;
   border: none;
-  color: white;
+  color: ${color};
   font-size: 2rem;
   
 `;
 
+const CancelButton = styled(Button)`
+  background-color: tomato;
+`;
 
+const AppWrapper = styled.div`
+  header {
+    background-color: teal;
+  }
+
+  ${Button} {
+    margin-bottom: 2rem;
+  }
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <AppWrapper>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
             <Heading>
             Edit <code>src/App.js</code> and save to reload.
           </Heading>
           <Button type="save">Save</Button>
-          <Button type="cancel">Save</Button>
+          <CancelButton type="cancel">Cancel</CancelButton>
           <a
             className="App-link"
             href="https://reactjs.org" 
@@ -40,7 +54,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
-      </div>
+      </AppWrapper>
     );
   }
 }
