@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../logo.svg';
 import styled from 'styled-components';
+import { purple, elevation } from '../../style/utilities';
 
 const Header = ({ className }) => (
     <header className={className}>
@@ -9,10 +10,13 @@ const Header = ({ className }) => (
 );
 
 export default styled(Header)`
-    background: #524763;
+    background: ${purple};
     padding: 10px 5%;
 
     .logo {
         width: 60px;
     }
+
+    ${elevation[2]}
+
 `;
