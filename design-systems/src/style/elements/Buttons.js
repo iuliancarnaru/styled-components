@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { teal, elevation } from '../utilities';
+import { lighten } from 'polished';
 
 
 export const Button = styled.button`
@@ -35,4 +36,7 @@ export const Button = styled.button`
 
 export const CancelButton = styled(Button)`
   background-color: tomato;
+  &:hover {
+    background: ${lighten(0.2, 'tomato')};
+  }
 `;
