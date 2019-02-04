@@ -6,7 +6,6 @@ import { purple, elevation, fixed, serif } from '../../style/utilities';
 const Header = ({ className }) => (
     <header className={className}>
         <img src={logo} alt="logo" className="logo" />
-        Hello
     </header>
 );
 
