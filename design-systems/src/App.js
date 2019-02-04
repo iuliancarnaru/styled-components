@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GlobalStyle from './Global';
 import Header from './components/layouts/Header';
-import { Button, CancelButton } from './style/elements';
+import { Button, Card } from './style/elements';
 
 
 
@@ -10,10 +10,17 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <GlobalStyle />
-        <Button size="small">Say hello</Button>
-        <Button size="small" type="cancel">Cancel</Button>
-        <CancelButton size="small">Don't Say hello</CancelButton>
+        <main>
+          <GlobalStyle />
+          <Card>
+            <h2>Card heading</h2>
+            <Card.Button>Say hello</Card.Button>
+            <Card.Button modifiers="cancel">Don't say hellp</Card.Button>
+          </Card>
+          
+          
+          <Button modifiers={["small", "cancel"]}>Cancel</Button>
+        </main>
       </div>
     );
   }

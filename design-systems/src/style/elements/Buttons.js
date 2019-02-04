@@ -1,7 +1,19 @@
 import styled from 'styled-components';
 import { teal, elevation } from '../utilities';
 import { lighten } from 'polished';
+import { applyStyleModifiers } from 'styled-components-modifiers';
 
+
+const BUTTON_MODIFIERS = {
+  small: () => `
+    font-size: 1rem;
+    padding: 3px 10px;
+  `,
+
+  cancel: () => `
+    background: tomato;
+  `
+}
 
 export const Button = styled.button`
   background-color: ${teal};
@@ -13,25 +25,11 @@ export const Button = styled.button`
   font-size: 2rem;
   transition: all .2s ease;
 
-  ${({size}) => {
-    if(size === 'small'){
-      return`
-        font-size: 1rem;
-        padding: 3px 10px;
-      `
-    }
-  }}
-  ${({type}) => {
-    if(type === 'cancel'){
-      return`
-        background: tomato;
-      `
-    }
-  }}
-
   &:hover {
     ${elevation[2]};
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 export const CancelButton = styled(Button)`
