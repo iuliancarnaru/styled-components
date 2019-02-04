@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { teal, elevation } from '../utilities';
+import { elevation } from '../utilities';
 import { lighten } from 'polished';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
@@ -10,13 +10,13 @@ const BUTTON_MODIFIERS = {
     padding: 3px 10px;
   `,
 
-  cancel: () => `
-    background: tomato;
+  cancel: ({ theme }) => `
+    background: ${theme.colors.secondary};
   `
 }
 
 export const Button = styled.button`
-  background-color: ${teal};
+  background-color: ${props => props.theme.colors.primary};
   ${elevation[1]};
   padding: 5px 20px;
   border-radius: 5px;
@@ -33,7 +33,7 @@ export const Button = styled.button`
 `;
 
 export const CancelButton = styled(Button)`
-  background-color: tomato;
+  background-color: ${props => props.theme.colors.secondary};
   &:hover {
     background: ${lighten(0.2, 'tomato')};
   }

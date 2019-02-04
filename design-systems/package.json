@@ -24,5 +24,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-plugin-macros": "^2.4.5",
+    "babel-plugin-styled-components": "^1.10.0"
+  }
 }
